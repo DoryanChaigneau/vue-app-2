@@ -1,2 +1,0 @@
-(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["Favoris"],{"5f29":function(e,t,s){"use strict";s.r(t);var n=function(){var e=this,t=e.$createElement;e._self._c;return e._m(0)},r=[function(){var e=this,t=e.$createElement,s=e._self._c||t;return s("div",{staticClass:"favoris"},[s("h1",[e._v("Ceci est une page de test pour les routes.")])])}],a=s("2877"),u={},c=Object(a["a"])(u,n,r,!1,null,null,null);t["default"]=c.exports}}]);
-//# sourceMappingURL=Favoris.ad097888.js.map
