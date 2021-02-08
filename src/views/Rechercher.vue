@@ -5,6 +5,9 @@
         <div class="col-12 col-sm-6 my-3">
           <Form @showMeteo="showMeteo($event)"></Form>
         </div>
+        <div>
+          <button type="submit" class="btn btn-info btn-block" @click.prevent="addFavoris(ville)">Ajouter aux favoris</button>
+        </div>
         <div class="col-12 col-sm-6 d-flex justify-content-center my-3">
           <Tableau :ville="ville" :temperature="temperature" :humidite="humidite" :vent="vent" :icon="icon"></Tableau>
         </div>
@@ -31,7 +34,8 @@ export default {
       humidite: '',
       vent: '',
       textcontent: '',
-      icon: ''
+      icon: '',
+      favoris: []
     }
   },
   methods: {
@@ -54,6 +58,15 @@ export default {
               })
           )
           .catch((err) => console.log('Erreur : ' + err));
+    },
+    addFavoris: function(ville) {
+      let datas = localStorage.getItem("ville");
+      if (datas == "" || datas == null) {
+        localStorage.setItem("ville", JSON.stringify([]));
+      }
+      this.favoris = JSON.parse(localStorage.getItem("ville"));
+      this.favoris.push(ville);
+      localStorage.setItem("ville", JSON.stringify(this.favoris));
     }
   }
 }
@@ -61,7 +74,7 @@ export default {
 
 <style>
 body {
-  background-image: url('../assets/nature.jpg');
+
   background-size: cover;
   background-repeat: no-repeat;
   min-height: 100vh;

@@ -1,25 +1,30 @@
 <template>
   <div class="favoris">
     <div class="container">
-      <div align="left">
-          <br><button>Nantes</button><br>
-          <br><button>Marseille</button><br>
-          <br><button>Bruxelles</button><br>
+      <div>
+        <a><strong>Liste de vos favoris : </strong></a><br>
       </div>
-      <br><Tableau :ville="ville" :temperature="temperature" :humidite="humidite" :vent="vent" :icon="icon"></Tableau>
+      <table class="table">
+        <thead>
+        <tr>
+          <th scope="col">Villes</th>
+          <th scope="col">Météo</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr v-for="(favori, index) in favoris" :key="index">
+          <th>{{favori}}</th>
+        </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </template>
 
 <script>
 
-import Tableau from '@/components/Tableau.vue'
-
 export default {
-  name: 'Rechercher',
-  components: {
-    Tableau
-  },
+  name: 'Favoris',
   data() {
     return {
       ville: '',
@@ -27,7 +32,8 @@ export default {
       humidite: '',
       vent: '',
       textcontent: '',
-      icon: ''
+      icon: '',
+      favoris: ''
     }
   },
   methods: {
@@ -52,6 +58,9 @@ export default {
           )
           .catch((err) => console.log('Erreur : ' + err));
     }
+  },
+  created() {
+    this.favoris = JSON.parse(localStorage.getItem("ville"));
   }
 }
 </script>
