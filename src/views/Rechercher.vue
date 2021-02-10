@@ -40,7 +40,7 @@ export default {
   },
   methods: {
     showMeteo: function(ville){
-      let url = `https://api.openweathermap.org/data/2.5/weather?q=${ville}&appid=366e5f70d9e70e45364730cb9a4f0221&units=metric&lang=fr`;
+      let url = `https://api.openweathermap.org/data/2.5/weather?q=${ville}&appid=2536afab9d640a3ec5b9fb6038fdaae3&units=metric&lang=fr`;
 
       fetch(url)
           .then((response) =>
@@ -74,7 +74,6 @@ export default {
 
 <style>
 body {
-
   background-size: cover;
   background-repeat: no-repeat;
   min-height: 100vh;

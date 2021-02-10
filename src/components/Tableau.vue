@@ -1,5 +1,5 @@
 <template>
-  <div class="Jsp">
+  <div class="Tableau">
     <div class="box-container">
       <div id="ville" class="box">{{ ville }}</div>
       <div id="temperature" class="box"><i class='fas fa-thermometer-half'></i>{{ temperature }}</div>
@@ -24,7 +24,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 
 .box-container {
   width: 300px;
